@@ -2,9 +2,12 @@ import java.util.Locale;
 
 public class Main {
   public static void main(String[] args) {
-    int y = 32;
     double x = 10.35123;
+    int y = 32;
+    String z = "Uma String";
 
+    // print() -> sem quebra de linha
+    // println() -> com quebra de linha
     System.out.println(x);
     System.out.println(y);
     System.out.println("Olá mundo!");
@@ -20,6 +23,14 @@ public class Main {
     System.out.printf("%.4f%n", x);
 
     // concatenação
-    System.out.printf("O resultado é: " + x + " metros");
+    System.out.printf("O resultado é: " + x + " metros %n");
+
+    /* 
+      %f -> ponto flutuante
+      %d -> inteiro
+      %s -> texto
+      %n -> quebra de linha
+    */
+    System.out.printf("x: %.2f, y: %d, z: %s", x, y, z);
   }
 }

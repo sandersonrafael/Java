@@ -1,4 +1,0 @@
--> Para exibir mensagem na tela do usuário (escrita) usa-se os comandos:
-
-1 - System.out.print("Mensagem") -> Sem quebra de linha
-1 - System.out.printlt("Mensagem") -> Com quebra de linha
