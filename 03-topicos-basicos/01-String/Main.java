@@ -2,6 +2,7 @@
 
 /* Formatar */
 /*
+String.format("formatacao", variavelNumerica) -> formata como o printf, como %.2f, por ex
 toLowerCase() -> letras minúsculas
 toUpperCase() -> letras maiúsculas
 trim() -> remover espaços em branco isolados

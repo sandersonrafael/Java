@@ -1,0 +1,11 @@
+Object e toString
+
+-> toda class em Java é uma subclasse da classe Object
+  -> métodos gerais do Object:
+    -> getClass -> retorna o tipo do objeto
+    -> equals -> compara se dois objetos são iguais
+    -> hashCode -> retorna um código hash do objeto
+    -> toString -> converte o objeto para string
+
+-> toString
+  -> para usar o toString, é necessário declarar o método dentro da classe
