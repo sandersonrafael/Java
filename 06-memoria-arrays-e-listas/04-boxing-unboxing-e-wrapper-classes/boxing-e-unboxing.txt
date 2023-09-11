@@ -1,0 +1,11 @@
+# boxing
+
+-> processo de conversão de um objeto tipo valor para um objeto tipo referência compatível
+
+// boxing -> valor da Stack é "encaixotado", levado ao Heap
+int x = 20; -> variável ocupa um espaço na Stack da memória
+Object obj = x; -> agora o x se torna um ponteiro para o Heap que possui o valor de 20
+
+// unboxing -> valor do Heap é copiado para o Stack
+int y = (int) obj; -> é criado um novo valor na stack que vale 20, agora, representado por y
+

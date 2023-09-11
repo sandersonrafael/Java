@@ -1,0 +1,40 @@
+# Wrapper classes
+
+-> classes equivalentes aos tipos primitivos
+
+ou seja, é possível usar a classe em vez da declaração comum, como:
+
+Integer x = 20;
+==
+int x = 20;
+
+# Todos os Casos
+
+Object {
+  Number [
+    Byte == byte,
+    Short == short,
+    Integer == int,
+    Long == long,
+    Float == float,
+    Double == double
+  ]
+  Boolean == boolean
+  Character == char
+}
+
+# Uso
+
+-> São mais usados em sistemas de informação, pois os tipos referência, como classes,
+  aceitam valores nulos e possuem características da POO (orientação a objetos)
+
+ex de uso
+
+public class Produto {
+  public String nome;
+  public Double preco;
+  public Integer quantity;
+}
+
+^-> os valores acima podem aceitar valor nulo, como o preço para casos de
+  indisponibilidade, por ex.

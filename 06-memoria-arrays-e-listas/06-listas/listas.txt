@@ -1,0 +1,41 @@
+# Listas
+
+* Trata-se de uma estrutura de dados
+  -> Homogênea (mesmo tipo);
+  -> Ordenada (elementos em determinadas posições);
+  -> Inicia vazia e elementos alocados sob demanda
+  -> Cada elemento ocupa um nó.
+
+* Tipo (interface): List
+  -> Implementam ArrayList, LinkedList, etc.
+
+* Vantagens
+  -> Tamanho variável;
+  -> Facilidade para inserir ou deletar itens.
+
+* Desvantagens
+  -> Acesso sequencial dos elementos * usando ArrayList, esse problema é minimizado
+
+
+# Sintaxe das Listas
+
+size() -> tamanho da lista
+
+add(obj), add(int, obj) -> inserir elementos
+
+remove(obj), remove(int), removeIf(predicado) -> remover elementos da lista
+
+indexOf(obj), lastIndexOf(obj) -> encontrar posição dos elementos
+
+List<Integer> result list.stream().filter(x -> x > 4).collect(Collectors.toList())
+  -> filtrar lista com base em predicado
+
+Integer result = list.stream().filter(x -> x > 4).findFirst()orElse(null)
+  -> encontrar primeira ocorrência com base em predicado
+
+
+# assuntos relacionados pendentes
+
+* interfaces
+* generics
+* predicados (lambda)
