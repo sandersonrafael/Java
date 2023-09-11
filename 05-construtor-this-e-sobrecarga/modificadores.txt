@@ -1,0 +1,4 @@
+private -> só pode ser acessado pela própria classe
+(nenhum) -> só pode ser acessado pelas classes do mesmo pacote (pasta)
+protected -> só pode ser acessado no mesmo pacote ou em subclasses
+public -> pode ser acessado em qualquer pacote que importa
