@@ -1,0 +1,16 @@
+# matriz
+
+* Trata-se de um nome dado a arranjos bidimensionais
+  -> basicamente, vetores de vetores
+
+* Arranjo (array) é uma estrutura de dados:
+  -> homogênea (mesmo tipo)
+  -> Ordenada
+  -> Alocada de uma vez só, em bloco contíguo de memória
+
+* Vantagens
+  -> Acesso imediato por posições
+
+* Desvantagens
+  -> Tamanho fixo
+  -> Dificuldade para inserir / deletar
