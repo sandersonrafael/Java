@@ -1,0 +1,37 @@
+# desalocação do garbage collector
+
+ex:
+Produto p1, p2;
+p1 = new Produto("TV", 900.00, 0);
+p2 = new Produto("BICICLETA", 660.90, 1);
+
+se o usuário fizer:
+p1 = p2; -> o espaço na memória onde o ponteiro de p1 apontava perde a referência e logo será
+  desalocado da memória pelo garbage collector
+
+# desalocação por escopo
+
+ex1:
+void metodo1() {
+  int x = 10;
+  if (x > 0) {
+    int y = 20;
+  }
+  System.out.println(y) -> apresenta erro / y já foi desalocado da memória ao deixar o bloco do if
+}
+
+ex2:
+void metodo1() {
+  Produto p = metodo2();
+  System.out.println(p.nome);
+}
+
+Produto metodo2() {
+  Produto prod = new Produto("TV", 900, 0);
+  return prod;
+}
+
+# Resumo
+
+-> objetos alocados dinamicamente, quando perdem a referência, são desalocados pelo garbage collector
+-> variáveis locais são desalocadas imediatamente quando deixam o escopo que estão, durante execução
