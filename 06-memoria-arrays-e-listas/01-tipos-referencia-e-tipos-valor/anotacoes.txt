@@ -1,0 +1,34 @@
+# tipo referência
+
+-> variáveis cujo tipo são classes não devem ser entendidas como caixas, mas sim ponteiros
+  - ex: Produto produto = new Produto(nomeTal, precoTal); // variável do tipo Produto
+  - o produto do tipo Produto não carrega seus dados, mas sim o endereço onde eles estão na memória
+
+-> em caso de atribuição de um objeto para outro, como: produto2 = produto1, o objeto não recebe
+  os dados do outro objeto, ele recebe apenas uma referência igual, mas referencia o mesmo espaço na memória
+  se um for alterado, reflete nos dois
+
+-> tipos referência aceitam receber valor null, significando que ela não aponta para ninguém
+
+
+# tipo valor
+
+-> variáveis do tipo primitivo são do tipo valor e não referência
+  - ex: boolean, char, byte, short, int, long, float e double
+
+
+# valores padrão
+
+-> variáveis possuem valores padrões como segue:
+  numeros: 0
+  boolean: false
+  char: caractere código 0
+  objeto: null
+
+
+#tipo referência vs tipo valor
+
+-> Y = X - Y aponta para onde X aponta vs Y recebe uma cópia de X
+-> instanciados no heap (ponteiro) vs intanciado no stack (memória)
+-> são desalocados automaticamente pelo garbage collector quanto não utilizados
+  vs são desalocados imediatamente quando o escopo de execução finaliza
