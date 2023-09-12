@@ -1,0 +1,60 @@
+# Data e Hora
+
+* Data-[hora] local:
+  ano-mês-dia-[hora] sem fuso horário
+  [hora] opcional
+
+* Data-hora global:
+  ano-mês-dia-hora com fuso horário
+
+* Duração:
+  tempo decorrido entre duas data-horas
+
+# Quando usar
+
+* Local -> em sistemas locais, como planilhas, sistemas de comércio pequeno, etc
+* global -> quando envolve pessoas de outros fusos-horários
+
+
+# Timezone (fuso horário)
+
+* GMT - Greenwich Mean Timer
+  -> Horário de Londres
+  -> Horário padrão UTC - Coordinated Universal Time
+  -> Também chamado de "Z" time, ou Zulu time
+
+* ex
+  -> São Paulo: GMT-3
+  -> Manaus: GMT-4
+  -> Portugal: GMT+1
+
+
+# iso 8601
+
+* Trata-se da representação de data e hora em formato de texto
+
+* Data-[hora] local
+  -> 2022-07-21
+  -> 2022-07-21T14:52
+  -> 2022-07-21T14:52:09
+  -> 2022-07-21T14:52:09.4073
+
+* Data-hora global
+  -> 2022-07-23T14:52:09Z -> com Z significa com horário de Londres
+  -> 2022-07-23T14:52:09.254935Z
+  -> 2022-07-23T14:52:09-03:00 -> -n:n significa 
+
+
+# Operações importantes
+
+* Instanciação
+** Converter: um - outro:
+  -> (agora) - data-hora
+  -> Texto ISO 8601 - Data-hora
+  -> Texto formato customizado - Data-hora
+  -> dia, mês, ano, [horário] - Data-hora local
+
+* Formatação
+** Converter: um - outro:
+  -> Data-hora - Iso 8601
+  -> Data-hora - Texto formatado customizado
