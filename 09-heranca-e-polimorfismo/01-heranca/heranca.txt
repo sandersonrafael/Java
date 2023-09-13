@@ -1,0 +1,25 @@
+# Herança
+  => associação que permite uma classe herdar todos os dados e comportamentos de outra
+
+* Definições importantes
+
+* Vantagens
+  -> Reuso
+  -> Polimofismo
+
+* Sintaxe
+  -> class B extends A
+
+
+# Modificador protected
+  => Permite fazer com que o atributo presente na classe super() seja acessível pela subclasse
+  => Ao mesmo tempo, não pode ser acessado por objetos instanciados como o private
+
+
+# Definições importantes
+
+* Relação "é-um"
+* Generalização/especialização
+* Superclasse é a classe base / subclasse é a class derivada
+* Herança / extensão
+* Herança é associação entre classes e não entre objetos

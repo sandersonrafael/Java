@@ -1,0 +1,11 @@
+# Upcasting
+
+* Casting da subclasse para a superclasse
+* Uso comum, polimorfismo
+
+
+# Downcasting
+
+* Casting da superclasse para subclasse
+* Palavra instanceof
+* Uso comum: métodos com parâmetros genéricos (ex: Equals)
