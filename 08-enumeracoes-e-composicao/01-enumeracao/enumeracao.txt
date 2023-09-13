@@ -1,0 +1,10 @@
+# Enumeração
+
+* Tipo especial para especificar conj de constantes relacionadas
+* Palavra chave: enum
+* Vantagens: semântica, legibilidade e auxílio do compilador
+
+# Conversão de Sring para enum
+
+StatusDoPedido sDP1 = StatusDoPedido.ENTREGUE;
+StatusDoPedido sDP2 = StatusDoPedido.valueOf("ENTREGUE");

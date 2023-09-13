@@ -1,0 +1,9 @@
+# Composição
+
+* Tipo de associação que permite objeto conter outro
+* Relação "tem-um" ou "tem-vários"
+* Vantagens: 
+  -> Organização: divisão de responsabilidades
+  -> Coesão: cada objeto é responsável por uma coisa somente
+  -> Flexibilidade
+  -> Reuso
