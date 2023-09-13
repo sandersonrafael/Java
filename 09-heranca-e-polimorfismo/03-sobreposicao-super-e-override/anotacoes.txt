@@ -1,0 +1,10 @@
+# Sobreposição
+
+* Implementacao de um método da superclasse na subclasse
+* Recomenda-se utilizar a anotação @Override em um método sobrescrito (boa prática)
+  -> Facilita a leitura e compreensão do código
+  -> Avisa ao compilador
+
+# Palavra super
+
+* É possível usar a implementação da superclasse usando a palavra super

@@ -1,0 +1,5 @@
+Ex1:
+Supor que a operação de saque possui taxa de 5.00, porém, não deve ser cobrada para conta poupança
+
+Ex2:
+Supor que na classe ContaEmpresarial a regra seja realizar o saque normalmente e descontar mais 2.0
