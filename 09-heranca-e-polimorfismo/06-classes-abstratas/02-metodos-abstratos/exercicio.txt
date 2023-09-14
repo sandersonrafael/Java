@@ -1,0 +1,2 @@
+Fazer programa para ler dados de N figuras e depois mostrar as
+áreas destas figuras na mesma ordem em que foram digitadas

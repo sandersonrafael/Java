@@ -1,0 +1,22 @@
+# Pilares da POO
+
+* Encapsulamento
+* Herança
+* Polimorfismo
+
+
+# Polimorfismo
+  => Recurso onde variáveis do mesmo tipo mais genérico podem apontar para objetos
+    de tipos específicos diferentes, possuindo comportamentos diferentes para cada
+    tipo específico
+
+ex:
+Conta conta1 = new Conta(...args);
+Conta conta2 = new ContaPoupanca(...args);
+
+O tipo de conta1 e conta2 é o mesmo, porém, as operações são diferentes pois cada um
+é instância de um tipo específico diferente
+
+* A associação do tipo específico é feita durante o tempo de execução, ou seja, 
+  o compilador não sabe exatamente a qual tipo específico está referenciando antes
+  de executar o código

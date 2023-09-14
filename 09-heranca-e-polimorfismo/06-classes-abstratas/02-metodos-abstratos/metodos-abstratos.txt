@@ -1,0 +1,6 @@
+# Método abstrato
+
+* Métodos que não possuem implementação
+* Métodos precisam ser abstratos que a classe é genérica demais para implementar
+  -> ex: formas geométricas podem não ter fórmulas específicas para cálculo da área, enquanto outras tem
+* Se a classe possuir um método abstrato, ela também é abstrata
