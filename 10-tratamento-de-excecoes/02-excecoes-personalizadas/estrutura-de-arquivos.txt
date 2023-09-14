@@ -1,0 +1,7 @@
+# Recomendação do professor no sistema models
+
+model/
+  entities/
+  enums/
+  exception/
+  services/
