@@ -27,5 +27,6 @@ public class ClasseFile {
         // criando diretório
         boolean sucesso = new File(diretorio + "/pasta-teste").mkdir();
         System.out.println("Subpasta foi criada? -> " + (sucesso ? "Sim" : "Não"));
+        sc.close();
     }
 }

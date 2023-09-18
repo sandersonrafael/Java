@@ -1,0 +1,4 @@
+Fazer leitura do arquivo dados.txt e produzir um arquivo no formato .csv (summary.csv) que contenha
+os produtos presentes no arquivo com os seus valores totais
+Formato do arquivo está:
+PRODUTO, PREÇO, UNIDADES
