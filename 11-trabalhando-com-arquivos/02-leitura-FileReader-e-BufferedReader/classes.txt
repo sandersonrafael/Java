@@ -1,0 +1,8 @@
+# Classes
+
+* FileReader
+  -> Stream (Sequência) de leitura de caracteres a partir de arquivos
+
+* BufferedReader
+  -> Mais rápido
+  -> É instanciado a partir de um objeto FileReader já instanciado

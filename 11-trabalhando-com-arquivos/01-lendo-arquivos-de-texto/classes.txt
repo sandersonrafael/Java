@@ -1,0 +1,10 @@
+# Classes
+
+* File
+  -> Representação abstrata de um arquivo e seu caminho
+
+* Scanner
+  -> Leitor de texto
+
+* IOException (herda Exception)
+  -> Exceção padrão para entrada e saída com arquivos

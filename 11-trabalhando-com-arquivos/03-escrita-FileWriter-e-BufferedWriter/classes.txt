@@ -1,0 +1,9 @@
+# Classes
+
+* FileWriter
+  -> Stream de escrita de caractere em arquivos
+  -> Cria/Recria arquivo, caso não existe: new FileWriter(caminho);
+  -> Acrescenta ao arquivo existente: new FileWriter(caminho, true);
+
+* BufferedWriter (mais ráipdo)
+  -> Usa e otimizar o FileWriter instanciado
