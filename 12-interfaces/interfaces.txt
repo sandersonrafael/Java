@@ -1,0 +1,13 @@
+# Importante
+
+* A partir do Java 8, interfaces podem ter "default methods" ou "defender methods"
+* Antes, interfaces não possuíam implementação de métodos
+
+# interfaces
+
+* Tipo que define conjunto de operações que uma classe deve implementar
+* Funciona como uma classe abstract, onde a interface tem todos os métodos e todos
+  precisam estar na classe que a implementa
+* Estabelece um "contrato" que a classe deve cumprir
+
+* Objetivo -> Criar sistemas com baixo acoplamento e flexíveis
