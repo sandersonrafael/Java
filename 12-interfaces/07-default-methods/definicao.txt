@@ -1,0 +1,7 @@
+# Default methods (defender methods)
+
+* A partir do Java 8, interfaces podem conter métodos concretos (não apenas "contratos")
+
+* Provém implementação padrão para métodos, de modo a evitar:
+  -> repetição de implementação
+  -> uso de classes abstratas para prover reuso de implementações

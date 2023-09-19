@@ -1,0 +1,10 @@
+# Aspectos comuns
+
+* Relação é-um
+* Generalização/especialização
+* Polimorfismo
+
+# Diferença fundamental
+
+* Herança -> Reuso
+* Interface -> Contrato a ser cumprido

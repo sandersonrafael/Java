@@ -1,0 +1,8 @@
+# Considerações importantes
+
+* Com os default methods, agora é possível prover reuso através de interfaces
+* Também se torna possível o uso de heranças múltiplas. Porém, caso as múltiplas
+  interfaces tenham assinaturas de métodos similares, é necessário sobrescrever
+  com o @Override
+* Apesar das similaridades, as interfaces não são iguais às classes abstratas
+  pois não possuem construtores nem atributos
