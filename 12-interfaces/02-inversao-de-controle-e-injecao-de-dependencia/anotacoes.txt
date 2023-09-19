@@ -1,0 +1,16 @@
+# Inversão de controle
+
+* Padrão que retira das classes a responsabilidade de instanciar suas dependências.
+  O programa principal quem fica responsável por isso ao passar a dependência instanciada
+  como parâmetro
+
+
+# Injeção de dependência
+
+* Forma de realizar a inversão de controle.
+  -> componente externo instancia a dependência
+  -> esta é injetada no objeto "pai"
+  -> formas de implemnetação
+    --> Construtor
+    --> Classe de instanciação (builder/factory)
+    --> Container / Framework
