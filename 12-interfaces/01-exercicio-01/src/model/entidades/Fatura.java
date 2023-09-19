@@ -26,6 +26,6 @@ public class Fatura {
     }
 
     public Double getValorTotal() {
-        return getValorBase() - getTributo();
+        return getValorBase() + getTributo();
     }
 }
