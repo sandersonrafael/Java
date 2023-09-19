@@ -9,9 +9,11 @@ public class ServicoDeAluguel {
     private Double precoPorHora;
     private Double precoPorDia;
 
-    private ServicoDeImpostos servicoDeImposto;
+    // aproveita todas classes que cumprem o contrato da interface para a variável
+    // é similar a usar um tipo mais genérico e atribuir a um objeto que é "filho" dele
+    private ServicoImpostoInterface servicoDeImposto;
 
-    public ServicoDeAluguel(Double precoPorHora, Double precoPorDia, ServicoDeImpostos servicoDeImposto) {
+    public ServicoDeAluguel(Double precoPorHora, Double precoPorDia, ServicoImpostoInterface servicoDeImposto) {
         this.precoPorHora = precoPorHora;
         this.precoPorDia = precoPorDia;
         this.servicoDeImposto = servicoDeImposto;

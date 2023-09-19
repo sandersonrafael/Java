@@ -34,6 +34,8 @@ public class Programa {
         System.out.println("Qual o preço por dia?");
         double precoPorDia = sc.nextDouble();
 
+        // aqui no último argumento, continua sendo o ServicoDeImposto e não a interface
+        // é como um upcasting
         ServicoDeAluguel servicoDeAluguel = new ServicoDeAluguel(precoPorHora, precoPorDia, new ServicoDeImpostos());
         servicoDeAluguel.processarFatura(ac);
 
