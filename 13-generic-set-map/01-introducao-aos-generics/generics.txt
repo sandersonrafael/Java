@@ -1,0 +1,23 @@
+# Generics
+
+* Permitem que classes, interfaces e métodos possam ser parametrizados por tipo.
+  Benefícios:
+    -> Reuso
+    -> Type safety
+    -> Performance
+* Uso comum: coleções
+
+List<String> list = new ArrayList<>();
+list.add("Maria");
+String name = lsit.get(0);
+
+* na declaração da classe, usamos a notação:
+
+public class NomeDaClasse<T> {
+}
+
+O Generics T pode ser usado como tipo, dentro da classe. Significa dizer uma variável
+que recebe como "valor" um tipo e pode ser usada no corpo da classe.
+
+Desta maneira, é necessário informar um tipo durante a instanciação da classe NomeDaClasse. Como segue:
+NomeDaClasse<String> = new NomeDaClasse<>(...);
