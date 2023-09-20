@@ -1,0 +1,17 @@
+# Generics são invariantes
+
+* List<Object> não é supertipo de qualquer tipo da lista
+
+* Ex de erro:
+  -> {
+    List<Object> obj1 = new ArrayList<Object>();
+    List<Integer> obj2 = new ArrayList<Integer>();
+    obj1 = obj2; // apresenta erro de compilação
+  }
+
+* O tipo curinga, ou supertipo de qualquer lista, é <?>
+  -> {
+    List<?> obj1 = new ArrayList<Object>();
+    List<Integer> obj2 = new ArrayList<Integer>();
+    obj1 = obj2; // funcionará corretamente
+  }
