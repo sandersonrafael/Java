@@ -1,0 +1,8 @@
+método que copia os elementos de uma lista para outra
+
+List<Integer> ints = Arrays.asList(1, 2, 3, 4);
+List<Double> doubs = Arrays.asList(3.14, 6.28);
+List<Object> objs = new ArrayList<Object>();
+
+copiar(ints, objs);
+copiar(doubs, objs);

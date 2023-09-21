@@ -15,3 +15,8 @@
     List<Integer> obj2 = new ArrayList<Integer>();
     obj1 = obj2; // funcionará corretamente
   }
+
+* Com o curinga, podemos fazer métodos que recebem um genérico de "qualquer tipo"
+
+* Porém, não é possível adicionar elementos a uma lista de curinga, pois o compilador
+  não sabe qual o tipo específico do qual a lista foi instanciada

@@ -1,0 +1,52 @@
+# Principio get/put
+
+Ex:
+
+Wrapper Types
+
+Object -> {
+  Number -> {
+    Integer
+    Byte
+    Long
+    Short
+    Float
+    Double
+  }
+  Boolean
+  Character
+}
+
+* Princípio get/put
+
+-> Covariância
+
+List<Integer> inteiros = new ArrayList<Integer>();
+inteiros.add(10);
+inteiros.add(5);
+
+List <? extends Number> lista = inteiros;
+Number x = lista.get(0); // não apresenta erro
+
+lista.add(20); // erro de compilação
+
+// covariância, onde há possibilidade de um "get" mas não um "set"
+get - Ok
+put - Error
+
+
+-> Contravariância
+
+List<Object> objs = new ArrayList<Object>();
+objs.add("Maria");
+objs.add("Alex");
+
+List<? super Number> numeros = objs;
+numeros.add(10); // sem erro
+numeros.add(3.14);
+
+Number x = numeros.get(0); // erro de compilação
+
+// Contravariância, onde funciona set mas não get
+get - Erro
+put - ok
