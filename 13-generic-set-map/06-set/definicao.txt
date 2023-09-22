@@ -1,0 +1,35 @@
+# Set<T> (Similar a Lista)
+
+
+* Representa um conjunto de elementos (como na álgebra)
+  -> não admite repetições
+  -> elementos não possuem posição
+  -> acesso, inserção e remoção de elementos rápido
+  -> operações eficientes de conjunto: interseção, união e diferença
+
+* Principais implementações
+  -> HashSet - mais rápido (operações O(1) ou "um passo" em tabela hash) e não ordenado
+  -> TreeSet - mais lento (Op O(log(n)) em árvore rubro-negra) e ordenado pelo compareTo do objeto (ou Comparator)
+  -> LinkedHashSet - velocidade intermediária e elementos na ordem que são adicionados
+
+* Métodos importantes
+  -> add(obj), remove(obj), contains(obj)
+    --> baseado em equals e hashCode
+    --> se equals e hashCode não existirem, são usados para comparação de ponteiros
+  -> clear()
+  -> size()
+  -> removeIf(predicado)
+  -> addAll(outro) - união - adiciona os elementos de outro conj, sem repetição
+  -> retainAll(outro) - interseção - remove os elementos não contidos no outro
+  -> removeAll(outro) - diferença - remove todos os elementos contidos no outro
+
+
+# Como coleções Hash testam igualdade
+
+
+* Se hashCode e equals estiverem implementados:
+  -> Testa-se o hashCode, se der igual, testa-se com o equals
+  -> String, Integer, Double... Já possuem equals e hashCode implementados
+
+* Se não estiverem implementados:
+  -> Compara as referências (ponteiros) dos objetos

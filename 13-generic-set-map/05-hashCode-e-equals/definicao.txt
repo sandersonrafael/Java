@@ -1,0 +1,24 @@
+# hashCode e equals
+
+* Operações da classe Object, usadas para comparar a igualdade de dois objetos
+  -> o operador de igualdade, ==, podem não funcionar para objetos em geral
+
+* equals: mais lento e resposta 100% precisa
+* hashCode: mais rápido, mas resposta não é 100% precisa
+  -> Gera um código representado por um número inteiro de acordo com algum algorítimo
+  -> O limite da variável pode estourar e por alguma coincidência, duas strings similares
+    baterem os hashs
+
+* Tipos comuns (String, Date, Integer, Double...) já possuem implementação para ambos,
+  Classes personalizadas precisam que haja sobreposição (@Override)
+
+* hashCode
+  -> se dois hashs forem diferentes, os objetos são necessariamente diferentes
+  -> pode apresentar um "falso positivo", mas não um falso negativo
+  -> se o código de dois objetos for igual, muito provavelmente os códigos serão iguais
+    mas pode sim haver alguma colisão
+
+* Sugestão
+  -> Em uma base com milhares de elementos, podemos utilizar o hashCode para localizar
+    itens iguais ao hashCode e após localizar, comparar apenas os que devem iguais com o
+    hashCode com o método equals também. Garantindo 100% de precisão, mas com agilidade
