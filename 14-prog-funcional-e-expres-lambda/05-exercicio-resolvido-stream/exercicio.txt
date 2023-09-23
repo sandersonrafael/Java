@@ -1,0 +1,4 @@
+Fazer um programa que lê um conjunto de produtos em arquivo .csv
+
+Exibir em seguida o preço médio dos produtos. Depois, exibir em ordem decrescente
+os nomes dos produtos que possuem preço inferior ao preço médio
