@@ -1,0 +1,3 @@
+# Problema exemplo
+
+Fazer um programa que receba uma lista de produtos e aumente os preços de cada produto em 10%

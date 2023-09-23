@@ -1,0 +1,7 @@
+É uma interface funcional
+
+definido:
+
+public interface Consumer<T> {
+    void accept(T t);
+}
