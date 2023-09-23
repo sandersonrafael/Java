@@ -1,0 +1,15 @@
+# Interface funcional Function
+
+Implementa da seguinte maneira:
+
+public interface Function<T, R> {
+    R apply(T t);
+}
+
+# Função map
+
+* Trata-se de uma função que é aplicada a todos elementos de uma stream()
+* Conversões
+  -> List para Stream: .stream()
+  -> Stream para List: .collect(Collectors.toList()) // garante uma lista modificável e que aceita nulls
+  -> Stream para list: .toList() // garante uma lista não modificável que aceita nulls
