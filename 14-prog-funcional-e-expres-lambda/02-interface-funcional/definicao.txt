@@ -1,0 +1,27 @@
+# Interface funcional
+
+* Trata-se de uma interface que possui um único método abstrato. Suas implementações
+  são tratadas como expressões lambda
+* Internamente, na linguagem, é equivalente a uma função lambda
+* A função lambda é tratada como uma interface funcional
+
+ex1:
+
+public class MeuComparador implements Comparator<Produto> {
+    @Override
+    public int compareTo(Produto p1, Produto p2) {
+        return p1.getNome().compareTo(p2.getNome());
+    }
+}
+...
+public static void main(String[] args) {
+    lista.sort(new MeuComparador());
+}
+
+
+# Algumas interfaces funcionais
+
+* Predicate
+* Function
+* Consumer (pode gerar efeitos colaterais)
+  -> método void
