@@ -1,0 +1,58 @@
+# Stream
+
+* Sequência de elementos advinda de uma fonte de dados que oferece suporte a "operações agregadas"
+  -> Fontes: coleção, array, função de iteração, recurso de E/S
+
+
+# Características
+
+* É uma solução para processar sequências de dados de forma:
+  -> Declarativa (interação interna, escondida do programador)
+  -> Parallel-friendly (imutável -> thread safe)
+  -> Sem efeitos colaterais
+  -> Sob demanda
+* Acesso sequencial (sem índices)
+* Single-use - só pode ser usada uma vez
+* Pipeline - operações com streams retornam novas streams, sendo possível criar uma cadeia de
+  operações (fluxo de processamento)
+
+
+# Operações Intermediárias
+
+* filter
+* map
+* flatmap
+* peek
+* distinct
+* sorted
+* skip
+* limit (short-circuit)
+  -> ex: uma string com vários índices, o usuário pode determinar para ler somente 10
+
+
+# Operações Terminais
+
+* forEach
+* forEachOrdered
+* toArray
+* reduce
+* collect
+* min
+* max
+* count
+* anyMatch (*)
+* allMatch (*)
+* noneMatch (*)
+* findFirst (*)
+* findAny (*)
+
+(*) = curto circuito (short-circuit)
+
+
+# Criar uma stream
+
+* Basta chamar o método .strea() ou parallelStream() a partir de qualquer objeto Collection
+* Outras maneiras
+  -> Stream.of
+  -> Stream.ofNullable
+  -> Stream.iterate
