@@ -1,0 +1,7 @@
+É uma interface funcional
+
+É expressa por:
+
+public interface Predicate<T> {
+    boolean test(T t);
+}
