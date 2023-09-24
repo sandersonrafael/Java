@@ -1,0 +1,14 @@
+# API
+
+* Statement
+  -> lida com os comandos referentes ao db, ou Query
+* ResultSet
+  -> first() - move para a posição 1
+  -> beforeFirst() - move para a posição 0
+  -> next() - move para o próximo e retorna false se já estiver no último
+  -> absolute(int n) - move para posição n, onde os dados começam em 1 e não em 0
+
+
+# Exercicio
+
+Fazer recuperação de dados dos departamentos através dos seus ids em outra tabela
