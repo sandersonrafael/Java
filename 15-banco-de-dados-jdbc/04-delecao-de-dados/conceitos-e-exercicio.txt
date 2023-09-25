@@ -1,0 +1,11 @@
+# API
+
+* PreparedStatement
+* executeUpdate
+* Statemente.RETURN_GENERATED_KEYS
+* getGeneratedKeys
+
+
+# Exercicio
+
+Fazer inserção simples com preparedStatemente e inserção com recuperação de Id
