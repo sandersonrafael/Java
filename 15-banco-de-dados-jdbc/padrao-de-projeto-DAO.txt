@@ -1,0 +1,8 @@
+# Padrão de Projeto DAO (Data Access Object)
+
+* Para cada entidade, haverá um objeto responsável por fazer acesso a dados relacionados a esta entidade. Ex:
+  -> Cliente: ClienteDao
+  -> Produto: ProdutoDao
+  -> Pedido: PedidoDao
+* Cada DAO será definido por uma interface
+* A injeção de dependência pode ser feita por meio do padrão de projeto Factory
