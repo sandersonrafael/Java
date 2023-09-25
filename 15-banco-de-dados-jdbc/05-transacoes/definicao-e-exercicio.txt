@@ -1,0 +1,24 @@
+# Transações
+
+* Propriedades das Transações
+  -> Atômica (ou acontece tudo ou nada)
+  -> Consistente
+  -> Isolada
+  -> Durável
+
+* Ex: Transferência Bancária
+  -> O dinheiro é debitado de uma conta e após, é creditada em outra
+  -> Se ocorre erro após debitar de uma conta, os dados se tornam inconsistentes,
+    saindo de uma conta, mas não entrando em outra, por exemplo
+  -> Para garantir sua consistência, precisa ser uma transação
+
+# API
+
+* setAutoCommit(false) -> Cada alteração é confirmada automaticamente (falso)
+* commit() -> Confirmar transação
+* rollback() -> Desfazer o que foi feito até o momento
+
+
+# Exercicio
+
+Realizar uma transação
