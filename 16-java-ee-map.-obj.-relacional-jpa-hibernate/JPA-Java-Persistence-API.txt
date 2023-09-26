@@ -1,0 +1,20 @@
+# JPA - Java Persistence API
+
+* É a especificação padrão da plataforma Java EE (javax.persistence)
+  para mapeamento objeto-relacional
+* Identificador da especificação do JPA: JSR 338
+* Para usar a JPA, é necessário incluir no projeto uma de suas implementações (Hibernate por ex)
+
+
+# Principais classes da JPA
+
+* EntityManager
+  -> Encapsula uma conexão com a base de dados, realizando operações de acesso a dados, como
+  inserção, remoção, deleção e atualização em entidades (clientes, produtos, pedidos, etc)
+  monitoradas por ela em um mesmo contexto de persistência
+  -> Mantém-se uma única instância de EntityManager para cada thread do sistema (no caso de aplicação web,
+  para cada requisição ao sistema)
+
+* EntityManagerFactory
+  -> Usada para instanciar um objeto EntityManager
+  -> Mantém-se uma única instância do EntityManagerFactory para toda a aplicação

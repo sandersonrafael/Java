@@ -1,0 +1,17 @@
+# Java EE - Enterprise Edition - Mapeamento Objeto-Relacional
+
+* É um conjunto de especificações
+* Sua principal bibliotea é o JPA
+  -> biblioteca padrão de persistência de dados baseado no mapeamento objeto-relacional
+  -> o Hibernate é a principal implementação do JPA
+
+
+# Problema que resolve
+
+* Por diversos anos a maior dificuldade era de ficar traduzindo dados de tabela para objeto
+  e de objeto para tabela, como no capítulo anterior com o JDBC
+* Outras necessidades que também tinham que ser programadas "na mão":
+  -> Contexto de persistência - objetos não atrelados a uma conexão em dado momento
+  -> Mapa de identidade (cache de objetos já carregados) - evita consultas desnecessárias ao DB
+  -> Carregamento tardio (lazy loading)
+  -> Outros
