@@ -13,28 +13,28 @@ trim() -> remover espaços em branco isolados
   substring(inicio) -> recorta tudo a partir de determinado índice
   substring(inicio, fim) -> recorta tudo num intervalo
   */
-  
+
 /* Substituir */
 /*
   replace(char, char) -> substitui todas ocorrências de um caractere por outro especificado
   replace(String, String) -> substitui sequências de caracteres por outra
   */
-  
+
   /* Buscar */
   /*
   indexOf(char) -> localiza o índice de determinado caractere
   lastIndexOf(char) -> localiza o último índice que possui um caractere
   */
-  
+
   /* Separar */
   /*
-  srt.splice(char) -> separa a string em todas ocorrências do caractere informado
+  srt.split(char) -> separa a string em todas ocorrências do caractere informado
   */
 
   public class Main {
     public static void main (String[] args) {
       String original = "abcde FGHIJ ABC abc DEFG    ";
-  
+
       String minusc = original.toLowerCase();
       String maiusc = original.toUpperCase();
       String trim = original.trim();
@@ -46,7 +46,7 @@ trim() -> remover espaços em branco isolados
       int j = original.lastIndexOf("bc");
       String arrayDeTeste = "array de teste";
       String[] array = arrayDeTeste.split(" ");
-  
+
       System.out.println("original: |" + original + "|");
       System.out.println("minusc: |" + minusc + "|");
       System.out.println("maiusc: |" + maiusc + "|");
