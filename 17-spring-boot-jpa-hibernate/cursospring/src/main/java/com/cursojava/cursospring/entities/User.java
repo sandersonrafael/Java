@@ -2,8 +2,18 @@ package com.cursojava.cursospring.entities;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_user") // palavra User é palavra reservada no H2, então é importante renomear para não apresentar conflito
 public class User implements Serializable {
 
+    @Id // informa que a chave a seguir é a primária e id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // informa à aplicação que é autoincrementada
     private Long id;
     private String name;
     private String email;
