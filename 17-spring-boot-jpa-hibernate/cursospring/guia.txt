@@ -1,3 +1,13 @@
+Entity - Entidades (ou objetos) presentes no projeto - extends Serializable
+Anotations -> {
+    @Entity - Define para o compilador que trata-se de uma entidade
+    @ManyToOne - Define que o campo da entidade possui relacionamento muitos para um
+    @OneToMany(mappedBy = "nome_da_entidade_como_atributo_da_outra") - Define que o campo da entidade possui relacionamento um para muitos
+    @JoinColumn(name = "nome_da_coluna") - Como a chave estrangeira vai estar representada na tabela
+    @JsonIgnore - Usado quando uma entidade 1 possui uma entidade 2 e uma entidade 2 possui uma entidade 1,
+        para evitar loop e erro de chamadas infinitas, pois 1 chama 2, que chama 1, que chama 2 novamente e etc...
+}
+
 Controller - Define para onde vai a solicitação do cliente
 Anotation @Autowired -> obtém a instância do objeto anotado, como:
 @Autowired
