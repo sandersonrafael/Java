@@ -1,0 +1,27 @@
+Controller - Define para onde vai a solicitação do cliente
+Anotation @Autowired -> obtém a instância do objeto anotado, como:
+@Autowired
+private UserService service; -> já recebe um service instanciado sem relacionamento forte
+
+Resource - Define o endpoint que o cliente precisa acessar para interagir com o DB
+A Anotation principal deve ser do tipo:
+
+@RestController - sinalizador ao compilador que é um controller rest
+@RequestMapping(value = "/users") - rota
+public class NomeDoControlador
+
+Anotations - Pode ser usado parêntese para definir rotas também ->
+Métodos -> {
+    @GetMapping - requisições do tipo GET | Ex com rota: @GetMapping(value = "/{id}")
+    @PutMapping - requisições do tipo PUT
+    @PostMapping - requisições do tipo POST
+    @PatchMapping - requisições do tipo PATCH
+    @DeleteMapping - requisições do tipo DELETE
+}
+Auxiliares -> {
+    @PathVariable - sinaliza que é um valor passado como parâmetro de url, como @GetMapping(value = "/{id}")
+}
+
+
+
+Service - Define as interações com a base de dados, após as devidas validações
