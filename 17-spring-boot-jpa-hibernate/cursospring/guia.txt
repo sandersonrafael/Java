@@ -6,6 +6,13 @@ Anotations -> {
     @JoinColumn(name = "nome_da_coluna") - Como a chave estrangeira vai estar representada na tabela
     @JsonIgnore - Usado quando uma entidade 1 possui uma entidade 2 e uma entidade 2 possui uma entidade 1,
         para evitar loop e erro de chamadas infinitas, pois 1 chama 2, que chama 1, que chama 2 novamente e etc...
+    @ManyToMany - Permite fazer uma associação do tipo muitos para muitos com auxílio do @JoinTable e uma tabela associativa
+    @JoinTable(
+        name = "nome_da_tabela_associativa",
+        joinColumns = @JoinColumn(name = "nome_coluna_chave_estrangeira_da_classe"),
+        inverseJoinColumns = @JoinColumn(name = "nome_coluna_chave_estrangeira_da_outra_classe")
+    ) - cria uma tabela associativa de duas entidades
+    @ManyToMany(mappedBy = "nome_da_colecao") - mapeia a outra entidade que não a "principal"
 }
 
 Controller - Define para onde vai a solicitação do cliente
