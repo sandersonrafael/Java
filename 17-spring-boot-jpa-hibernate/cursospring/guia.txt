@@ -13,6 +13,8 @@ Anotations -> {
         inverseJoinColumns = @JoinColumn(name = "nome_coluna_chave_estrangeira_da_outra_classe")
     ) - cria uma tabela associativa de duas entidades
     @ManyToMany(mappedBy = "nome_da_colecao") - mapeia a outra entidade que não a "principal"
+    @Embeddable - Define que a classe trata-se de uma chave composta com duas ForeignKeys das Classes que o compõe
+    @EmbeddedId - Identifica que o atributo id selecionado trata-se de uma chave primária composta
 }
 
 Controller - Define para onde vai a solicitação do cliente
