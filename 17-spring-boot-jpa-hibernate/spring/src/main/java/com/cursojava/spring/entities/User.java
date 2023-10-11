@@ -2,11 +2,21 @@ package com.cursojava.spring.entities;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 // as entidades precisam implementar Serializable no spring
+@Entity // define que trata-se de uma entidade para que o JPA converta o objeto para "tabela"
+@Table(name = "tb_user") // define o nome da entidade na tabela, pois no H2, user é uma palavra reservada
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     // faltam as associações
+    @Id // define que o atributo seguinte trata-se da chave primária
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // define que os valores serão gerados automaticamente de 1 em 1
     private Long id;
     private String name;
     private String email;
