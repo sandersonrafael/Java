@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 import com.cursojava.spring.entities.Category;
 import com.cursojava.spring.entities.Order;
 import com.cursojava.spring.entities.OrderItem;
+import com.cursojava.spring.entities.Payment;
 import com.cursojava.spring.entities.Product;
 import com.cursojava.spring.entities.User;
 import com.cursojava.spring.entities.enums.OrderStatus;
@@ -89,5 +90,12 @@ public class TestConfig implements CommandLineRunner { // essa implementação f
         order3.getOrderItems().add(orderItem4);
 
         orderItemRepository.saveAll(Arrays.asList(orderItem1, orderItem2, orderItem3, orderItem4));
+
+        // nesse caso, no relacionamento 1 para 1, não salvaremos através do payment, pois ele é
+        // uma dependência de Order. Salvaremos através do próprio order
+        Payment payment1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), order1);
+        order1.setPayment(payment1);
+
+        orderRepository.save(order1);
     }
 }
