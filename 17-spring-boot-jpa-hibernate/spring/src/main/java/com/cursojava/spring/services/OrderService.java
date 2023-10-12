@@ -13,7 +13,7 @@ import com.cursojava.spring.repositories.OrderRepository;
 public class OrderService {
 
     @Autowired
-    OrderRepository repository;
+    private OrderRepository repository;
 
     public List<Order> findAll() {
         return repository.findAll();

@@ -8,10 +8,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.cursojava.spring.entities.Category;
 import com.cursojava.spring.entities.Order;
 import com.cursojava.spring.entities.User;
 import com.cursojava.spring.entities.enums.OrderStatus;
 import com.cursojava.spring.repositories.UserRepository;
+import com.cursojava.spring.repositories.CategoryRepository;
 import com.cursojava.spring.repositories.OrderRepository;
 
 @Configuration // define que trata-se de uma classe de configuração
@@ -27,6 +29,9 @@ public class TestConfig implements CommandLineRunner { // essa implementação f
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public void run(String... args) throws Exception {
         // id é nulo porque o DB quem define
@@ -37,7 +42,12 @@ public class TestConfig implements CommandLineRunner { // essa implementação f
         Order order2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT, user2);
         Order order3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.WAITING_PAYMENT, user1);
 
+        Category category1 = new Category(null, "Electronics");
+        Category category2 = new Category(null, "Books");
+        Category category3 = new Category(null, "Computers");
+
         userRepository.saveAll(Arrays.asList(user1, user2));
         orderRepository.saveAll(Arrays.asList(order1, order2, order3));
+        categoryRepository.saveAll(Arrays.asList(category1, category2, category3));
     }
 }
