@@ -1,15 +1,21 @@
 package com.cursojava.spring.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 // as entidades precisam implementar Serializable no spring
-@Entity // define que trata-se de uma entidade para que o JPA converta o objeto para "tabela"
+@Entity // define que trata-se de uma entidade para que o JPA converta o objeto para
+        // "tabela"
 @Table(name = "tb_user") // define o nome da entidade na tabela, pois no H2, user é uma palavra reservada
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -22,6 +28,11 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
+
+    @JsonIgnore // serve para que não fique em loop infinito de cliente chama pedido que chama cliente e etc novamente
+    @OneToMany(mappedBy = "client") // declara que uma entidade "cliente" possui várias entidades "pedido" e que o
+                                    // nome do atributo do tipo User é o "client" na entidade pedido
+    private List<Order> orders = new ArrayList<>();
 
     public User() { // obrigatório por se tratar de um framework (construtor vazio)
     }
@@ -72,6 +83,10 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
     }
 
     @Override
