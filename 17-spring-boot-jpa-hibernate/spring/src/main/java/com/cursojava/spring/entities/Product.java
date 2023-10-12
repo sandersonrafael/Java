@@ -8,8 +8,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_product")
@@ -24,7 +26,15 @@ public class Product implements Serializable {
     private Double price;
     private String imgUrl;
 
-    @Transient // temporário -> serve para que o Jpa não tente interpretar para evitar erro
+    // @Transient // temporário -> serve para que o Jpa não tente interpretar para evitar erro
+    @ManyToMany // declara que trata-se de uma associação de muitos para muitos
+    // só precisa ser feito um JoinTable, pois somente este já cria a nova tabela que relaciona as duas entidades
+    // mas é necessário declarar o ManyToMany(mappedBy = "nome da propriedade nessa entidade (categories, nesse caso)")
+    @JoinTable( // cria uma nova tabela que relaciona produtos e categorias, criando o relacionamento de muitos para muitos
+        name = "tb_product_category", // nome dessa nova tabela
+        joinColumns = @JoinColumn(name = "product_id"), // coluna que representa a chave primária dessa entidade
+        inverseJoinColumns = @JoinColumn(name = "category_id") // coluna que representa a chave primária da outra entidade (category)
+    )
     private Set<Category> categories = new HashSet<>();
 
     public Product() {
