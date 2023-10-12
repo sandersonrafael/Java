@@ -100,6 +100,15 @@ public class Order implements Serializable {
         this.payment = payment;
     }
 
+    // devido ao Java EE também, para ser exibido na tabela, é necessário utilizar um getTotal em vez de somente total
+    public Double getTotal() {
+        double total = 0.0;
+        for (OrderItem item : items) {
+            total += item.getSubTotal();
+        }
+        return total;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

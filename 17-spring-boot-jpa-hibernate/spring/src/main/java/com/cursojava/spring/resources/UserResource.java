@@ -1,13 +1,17 @@
 package com.cursojava.spring.resources;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.cursojava.spring.entities.User;
 import com.cursojava.spring.services.UserService;
@@ -32,5 +36,25 @@ public class UserResource {
     public ResponseEntity<User> findById(@PathVariable Long id) { // @PathVariable faz o spring reconhecer que esse é o parâmetro do GetMapping
         User user = service.findById(id);
         return ResponseEntity.ok().body(user);
+    }
+
+    @PostMapping // define que esta será uma requisição do tipo Post
+    // para receber os parâmetros pelo corpo da requisição, utilizamos a anotation @RequestBody no argumento
+    public ResponseEntity<User> insert(@RequestBody User user) {
+        User savedUser = service.insert(user);
+        // para personalizar o status de resposta, em vez de só usar ResponseEntity.ok() (ok significa status 200),
+        // podemos utilizar ResponseEntity.status(numeroDoStatus).body(entidadeSalva)
+        // além disso, há outros métodos que já são específicos, como o created(), que já representa status 201 ou
+        // badRequest(), etc. Esses métodos podem exigir uma URI (basicamente o link de acesso ao novo objeto)
+
+        // ServletUriComponentsBuilder é usado para obter uma URI da requisição (um header da response com o nome location
+        // e que representa a url do novo objeto criado) -> essa é a vantagem de se utilizar isso em vez de status(201)
+        URI uri = ServletUriComponentsBuilder
+            .fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(savedUser.getId())
+            .toUri();
+        return ResponseEntity.created(uri).body(savedUser);
+        // return ResponseEntity.status(201).body(savedUser);
     }
 }
