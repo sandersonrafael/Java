@@ -32,7 +32,7 @@ public class OrderItem implements Serializable {
 
     // como essa entidade em si não possui o produto e o pedido, criaremos o get independente de acordo
     // com o OrderItemPK id
-    @JsonIgnore // para que não dê o erro de
+    @JsonIgnore // para que não dê o erro de múltiplas chamadas
     public Order getOrder() {
         return id.getOrder();
     }
