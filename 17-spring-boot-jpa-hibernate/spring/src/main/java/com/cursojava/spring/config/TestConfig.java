@@ -10,11 +10,13 @@ import org.springframework.context.annotation.Profile;
 
 import com.cursojava.spring.entities.Category;
 import com.cursojava.spring.entities.Order;
+import com.cursojava.spring.entities.OrderItem;
 import com.cursojava.spring.entities.Product;
 import com.cursojava.spring.entities.User;
 import com.cursojava.spring.entities.enums.OrderStatus;
 import com.cursojava.spring.repositories.UserRepository;
 import com.cursojava.spring.repositories.CategoryRepository;
+import com.cursojava.spring.repositories.OrderItemRepository;
 import com.cursojava.spring.repositories.OrderRepository;
 import com.cursojava.spring.repositories.ProductRepository;
 
@@ -36,6 +38,9 @@ public class TestConfig implements CommandLineRunner { // essa implementação f
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private OrderItemRepository orderItemRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -70,7 +75,19 @@ public class TestConfig implements CommandLineRunner { // essa implementação f
         product4.getCategories().add(category3);
         product5.getCategories().add(category2);
 
+        OrderItem orderItem1 = new OrderItem(order1, product1, 2, product1.getPrice());
+        OrderItem orderItem2 = new OrderItem(order1, product3, 1, product3.getPrice());
+        OrderItem orderItem3 = new OrderItem(order2, product3, 2, product3.getPrice());
+        OrderItem orderItem4 = new OrderItem(order3, product5, 2, product5.getPrice());
+
         // poderia ter sido salvo só no final, mas foi duplicado para mostrar que é possível salvar e atualizar
         productRepository.saveAll(Arrays.asList(product1, product2, product3, product4, product5));
+
+        order1.getOrderItems().add(orderItem1);
+        order1.getOrderItems().add(orderItem2);
+        order2.getOrderItems().add(orderItem3);
+        order3.getOrderItems().add(orderItem4);
+
+        orderItemRepository.saveAll(Arrays.asList(orderItem1, orderItem2, orderItem3, orderItem4));
     }
 }
