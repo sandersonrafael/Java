@@ -10,11 +10,13 @@ import org.springframework.context.annotation.Profile;
 
 import com.cursojava.spring.entities.Category;
 import com.cursojava.spring.entities.Order;
+import com.cursojava.spring.entities.Product;
 import com.cursojava.spring.entities.User;
 import com.cursojava.spring.entities.enums.OrderStatus;
 import com.cursojava.spring.repositories.UserRepository;
 import com.cursojava.spring.repositories.CategoryRepository;
 import com.cursojava.spring.repositories.OrderRepository;
+import com.cursojava.spring.repositories.ProductRepository;
 
 @Configuration // define que trata-se de uma classe de configuração
 @Profile("test") // define que trata-se de uma configuração de teste, conforme arquivo:
@@ -32,6 +34,9 @@ public class TestConfig implements CommandLineRunner { // essa implementação f
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @Override
     public void run(String... args) throws Exception {
         // id é nulo porque o DB quem define
@@ -46,8 +51,15 @@ public class TestConfig implements CommandLineRunner { // essa implementação f
         Category category2 = new Category(null, "Books");
         Category category3 = new Category(null, "Computers");
 
+        Product product1 = new Product(null, "The Lord of the Rings", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
+        Product product2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "");
+        Product product3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
+        Product product4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
+        Product product5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
+
         userRepository.saveAll(Arrays.asList(user1, user2));
         orderRepository.saveAll(Arrays.asList(order1, order2, order3));
         categoryRepository.saveAll(Arrays.asList(category1, category2, category3));
+        productRepository.saveAll(Arrays.asList(product1, product2, product3, product4, product5));
     }
 }
