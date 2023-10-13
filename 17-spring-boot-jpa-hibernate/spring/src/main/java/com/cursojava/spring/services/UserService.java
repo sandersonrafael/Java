@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.cursojava.spring.entities.User;
 import com.cursojava.spring.repositories.UserRepository;
+import com.cursojava.spring.services.exceptions.ResourceNotFoundException;
 
 // repassa a chamada para o repository
 // @Component -> utilizado para que a Classe possa ser injetada como dependência da outra classe com o @Autowired (instanciado)
@@ -26,7 +27,10 @@ public class UserService {
         // optional é um objeto disponível desde o Java 8
         // para obter seu valor (User, nesse caso), é necessário usar o método .get();
         Optional<User> user = repository.findById(id);
-        return user.get();
+
+        // agora em vez do get, usaremos o método orElseThrow (se ele tentar o "get" e der erro, ele lança uma exceção de acordo com expressão lambda)
+        return user.orElseThrow(() -> new ResourceNotFoundException(id));
+        // return user.get();
     }
 
     public User insert(User user) {
