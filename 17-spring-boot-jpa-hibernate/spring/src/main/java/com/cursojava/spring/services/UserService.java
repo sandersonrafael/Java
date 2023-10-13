@@ -12,6 +12,8 @@ import com.cursojava.spring.repositories.UserRepository;
 import com.cursojava.spring.services.exceptions.DatabaseException;
 import com.cursojava.spring.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 // repassa a chamada para o repository
 // @Component -> utilizado para que a Classe possa ser injetada como dependência da outra classe com o @Autowired (instanciado)
 // @Repository -> similar, mas é semãntico para repositórios
@@ -48,10 +50,14 @@ public class UserService {
     }
 
     public User update(Long id, User newUserData) {
-        // utilizado para obter a referência através do ID sem fazer a operação no DB; O objeto criado é apenas monitorado pelo Jpa
-        User entity = repository.getReferenceById(id);
-        updateData(entity, newUserData);
-        return repository.save(entity);
+        try {
+            // utilizado para obter a referência através do ID sem fazer a operação no DB; O objeto criado é apenas monitorado pelo Jpa
+            User entity = repository.getReferenceById(id);
+            updateData(entity, newUserData);
+            return repository.save(entity);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     private void updateData(User entity, User newUserData) {
