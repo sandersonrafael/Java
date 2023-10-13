@@ -1,0 +1,70 @@
+# Nivelamento sobre NoSQL e MongoDB
+
+# Quais problemas eles resolvem?
+
+* Problema 1 - Incompatibilidade de impedância
+  -> No caso dos SQL, as entidades são salvas por meio de tabelas. Porém, na memória em tempo de
+    execução, as variáveis são utilizadas em formato de objeto. Era muito custoso converter à mão
+    mas bibliotecas surgiram para mitigar o problema, como o JPA. Apesar disto, ainda há o problema
+    da performance, que é prejudicada devida essas diversas "traduções / conversões", transações
+    e junções.
+
+  -> A junção, por exemplo, em um sistema de pedidos, ela busca a entidade pedido, entidade usuário,
+    entidade produto, entidade itemDePedido e etc, tendo que ler todos esses itens das tabelas e
+    traduzir para objetos, para que possam ser lidos pela memória
+
+  -> O NoSQL surgiu para trabalhar melhor com esse paradigma de objetos
+
+* Problema 2 - Grande volume de dados e acessos
+  -> Para lidar com muito tráfego de dados, é necessário adotar uma das seguintes escolhas:
+  --> Escala vertical - Um computador com mais recursos que outro
+  --> Escala horizontal - Estrutura de Cluster ou Grid com vários computadores "menores"
+
+  -> A escala horizontal tende a ser mais interessante devido ao menor custo, alta
+    confiabilidade / resiliência (se um computador estragar, os outros ainda funcionam),
+    crescimento menos limitado e virtualização
+
+  -> Bancos relacionais tendem a não funcionar tão bem no sistema horizontal, de Clusters
+    (não foram projetados com esse propósito)
+
+
+# NoSQL
+
+* Primeiras influências: Google (BitTable) e Amazon (Dynamo)
+
+* O nome NoSQL é acidental
+
+* Características mais comuns:
+  -> Não utilizam modelo relacional
+  -> Tem boa execução em Clusters
+  -> Código aberto
+  -> Século XXI
+  -> Não tem esquema
+
+
+# Duas classes principais de bancos NoSQL
+
+* Bancos de dados orientados a agregados
+  -> Modelo chave-valor (Riak, Redis)
+  -> Modelo de documentos (MongoDB, CouchDB)
+  -> Modelo família de colunas (Cassandra, Apache HBase)
+
+* Bancos de dados de grafos (Neo4j) - Relacionamentos complexos
+
+*** Agregados -> Conjunto de objetos relacionados que desejamos tratar como uma unidade
+*** No modeo SQL, uma entidade pode conter a referência para outras entidades dentro dela;
+  já no modeo NoSQL, todas as "dependências" de um objeto estão contidas no próprio objeto
+  (como representado em JSON, por exemplo { etc: [], etc2: { etc3: { ... } } }), no mesmo local do DB
+*** Nos NoSQL, também há situações que em vez de o objeto conter as informações, ele conter a referência
+  para outro objeto ( { user: orders_id_list: [1, 123, 542, 557, 771] } )
+
+
+# Resumo - Por que usar agregados?
+
+* Problema 1: incompatibilidade de impedância
+* Problema 2: grande volume de dados e acessos (em cluster)
+* Já possui a estrutura de objetos associados
+* Unidade natural de replicação e fragmentação
+  -> Todos os dados de um agregado estão armazenados JUNTOS e no mesmo NODO do Cluster
+
+*** Não suportam todo suporte ACID como bancos relacionais, mas garantem atomicidade no agregado
