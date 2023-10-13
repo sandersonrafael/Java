@@ -32,4 +32,21 @@ public class UserService {
     public User insert(User user) {
         return repository.save(user);
     }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
+    public User update(Long id, User newUserData) {
+        // utilizado para obter a referência através do ID sem fazer a operação no DB; O objeto criado é apenas monitorado pelo Jpa
+        User entity = repository.getReferenceById(id);
+        updateData(entity, newUserData);
+        return repository.save(entity);
+    }
+
+    private void updateData(User entity, User newUserData) {
+        entity.setName(newUserData.getName());
+        entity.setEmail(newUserData.getEmail());
+        entity.setPhone(newUserData.getPhone());
+    }
 }
