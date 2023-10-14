@@ -28,6 +28,7 @@ public class PostService {
     // busca por query do mongo
     public List<Post> findByTitle(String text) {
         // basta chamar o query method criado no repository
-        return repository.findByTitleContainingIgnoreCase(text);
+        // return repository.findByTitleContainingIgnoreCase(text); -> método anterior
+        return repository.findByTitleWithQuery(text);
     }
 }
