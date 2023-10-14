@@ -1,8 +1,11 @@
 package com.cursojava.springmongo.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document // no MongoDB, diferente do Jpa com MySQL, usamos @Document e não @Entity, pois é um NoSQL (orientado a documentos)
@@ -15,6 +18,11 @@ public class User implements Serializable {
     private String id;
     private String name;
     private String email;
+
+    @DBRef(lazy = true) // determina que essa variável é formada por referência a outra ou outras variáveis no mongodb
+    // lazy garante que ao carregar usuários, os seus posts não sejam carregados, para evitar perde de performance
+    // ao se buscar uma lista de usuários, por exemplo, onde só se desejam os usuários e não seus posts
+    private List<Post> posts = new ArrayList<>();
 
     public User() {
     }
@@ -47,6 +55,10 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
     }
 
     @Override
