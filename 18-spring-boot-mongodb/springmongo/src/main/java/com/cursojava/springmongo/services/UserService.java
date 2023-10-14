@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.cursojava.springmongo.domain.User;
 import com.cursojava.springmongo.repositories.UserRepository;
+import com.cursojava.springmongo.services.exceptions.ObjectNotFoundException;
 
 @Service // declara que é um service para o spring, abstraindo
 public class UserService {
@@ -16,5 +17,14 @@ public class UserService {
 
     public List<User> findAll() {
         return repository.findAll();
+    }
+
+    public User findById(String id) {
+        try {
+            User user = repository.findById(id).get();
+            return user;
+        } catch (RuntimeException e) {
+            throw new ObjectNotFoundException(e.getMessage());
+        }
     }
 }
