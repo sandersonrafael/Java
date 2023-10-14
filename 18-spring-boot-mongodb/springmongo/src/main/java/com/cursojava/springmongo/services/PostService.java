@@ -1,5 +1,7 @@
 package com.cursojava.springmongo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +23,11 @@ public class PostService {
         } catch (RuntimeException e) {
             throw new ObjectNotFoundException(e.getMessage());
         }
+    }
+
+    // busca por query do mongo
+    public List<Post> findByTitle(String text) {
+        // basta chamar o query method criado no repository
+        return repository.findByTitleContainingIgnoreCase(text);
     }
 }
