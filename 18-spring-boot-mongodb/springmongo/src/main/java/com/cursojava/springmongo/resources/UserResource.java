@@ -16,6 +16,7 @@ import com.cursojava.springmongo.domain.User;
 import com.cursojava.springmongo.dto.UserDTO;
 import com.cursojava.springmongo.services.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -60,5 +61,14 @@ public class UserResource {
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<UserDTO> update(@RequestBody UserDTO userDTO, @PathVariable String id) {
+        User user = service.fromDTO(userDTO);
+        user.setId(id);
+        user = service.update(user);
+
+        return ResponseEntity.ok().body(new UserDTO(user));
     }
 }
