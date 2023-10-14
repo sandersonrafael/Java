@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cursojava.springmongo.domain.User;
+import com.cursojava.springmongo.dto.UserDTO;
 import com.cursojava.springmongo.repositories.UserRepository;
 import com.cursojava.springmongo.services.exceptions.ObjectNotFoundException;
 
@@ -26,5 +27,23 @@ public class UserService {
         } catch (RuntimeException e) {
             throw new ObjectNotFoundException(e.getMessage());
         }
+    }
+
+    public User insert(User user) {
+        return repository.insert(user);
+    }
+
+    public Void delete(String id) {
+        try {
+            repository.findById(id).get();
+            repository.deleteById(id);
+        } catch (RuntimeException e) {
+            throw new ObjectNotFoundException(e.getMessage());
+        }
+        return null;
+    }
+
+    public User fromDTO(UserDTO userDTO) {
+        return new User(userDTO.getId(), userDTO.getName(), userDTO.getEmail());
     }
 }
